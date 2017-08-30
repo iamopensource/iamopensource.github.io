@@ -30,5 +30,5 @@ defaults:
     values:
       layout: plugin
 
-plugins:
+gems:
   - jekyll-octicons
