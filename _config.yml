@@ -10,6 +10,7 @@ exclude:
   - README.md
   - node_modules
   - vendor
+  - server
 
 sass:
   style: :compressed
