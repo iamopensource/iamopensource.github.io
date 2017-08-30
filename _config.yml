@@ -1,0 +1,34 @@
+title: Probot
+description:
+permalink: pretty
+
+exclude:
+  - Gemfile*
+  - node_modules
+  - package.json
+  - package-lock.json
+  - README.md
+  - node_modules
+  - vendor
+
+sass:
+  style: :compressed
+  sass_dir: _sass
+  load_paths:
+    - node_modules
+    - node_modules/**/*/node_modules
+
+collections:
+  plugins:
+    output: true
+    permalink: /apps/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: plugins
+    values:
+      layout: plugin
+
+plugins:
+  - jekyll-octicons

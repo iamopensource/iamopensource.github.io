@@ -1,0 +1,75 @@
+---
+layout: default
+---
+
+<div class="border-bottom bg-brand-blue-light">
+  <div class="container-lg px-3">
+    <div class="py-3 clearfix">
+      <h1 class="h3 float-left">
+        <strong class="">We Are Open Soure</strong>
+      </h1>
+      <nav class="text-bold d-block float-right">
+        <a class="text-inherit px-2 d-inline-block" href="#">Why</a>
+        <a class="text-inherit px-2 d-inline-block" href="#">Contribute</a>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<div class="border-bottom">
+  <div class="container-lg px-3 jumbotron jumbotron-minitron">
+    <div class="d-flex d-flex-row gutter-spacious flex-items-center">
+      <div class="flex-column col-10">
+        <h1 class="alt-h1 lh-condensed-ultra pb-2">Open source is for everyone.</h1>
+        <p class="text-gray pt-1">We're celebrating these awesome humans for merging their first ever Pull Request for a project.</p>
+      </div>
+      <div class="flex-column col-2 text-right">
+        <a class="btn btn-primary btn-large" href="https://opensource.guide/how-to-contribute/">Contribute</a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="">
+  <div class="container-lg px-3 py-6">
+    <div class="flex-column col-12">
+      <h4 class="alt-h3 text-gray timeline-date-header">8/28</h4>
+      <div class="contributions" id="contributions">
+    </div>
+  </div>
+</div>
+
+{% raw %}
+<script id="contribution-template" type="text/x-handlebars-template">
+  {{#each contributors }}
+  <div class="contribution">
+    <a href="{{user.html_url}}"><img alt="@{{user.login}}" class="gravatar rounded" height="100" src="{{user.html_url}}.png" width="100"></a>
+    <p class="text-gray contribution-message"><a class="text-gray-dark" href="{{user.html_url}}">@{{user.login}}</a> contributed to <a class="text-gray-dark" href="{{html_url}}">probot/probot</a> for the first time!</p>
+  </div>
+  {{/each}}
+</script>
+{% endraw %}
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+<script>
+// TODO: Add GA
+
+  var source = document.getElementById('contribution-template').innerHTML;
+  var template = Handlebars.compile(source);
+  var contributionsDiv = document.getElementById('contributions');
+
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'https://iamopensource-qrhtjgtelp.now.sh/api/contributions')
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4) { // Request is done
+      if (xhr.status === 200) {
+        var parsed = JSON.parse(xhr.response);
+        var html = template({contributors: parsed});
+        contributionsDiv.innerHTML = html;
+      } else {
+        console.log('Whoops');
+      }
+    }
+  }
+  xhr.send(null);
+</script>

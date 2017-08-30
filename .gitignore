@@ -1,0 +1,8 @@
+.jekyll-metadata
+_site
+bin
+Gemfile.lock
+vendor
+.bundle
+Gemfile.lock
+node_modules
