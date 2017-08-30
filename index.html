@@ -15,14 +15,19 @@ layout: default
   </div>
 </div>
 
-<div class="">
+<!-- <div class="">
   <div class="container-lg px-3 py-6">
     <div class="flex-column col-12">
       <h4 class="alt-h3 text-gray timeline-date-header">8/28</h4>
       <div class="contributions" id="contributions">
     </div>
   </div>
-</div>
+</div> -->
+{{#unless html}}
+  <div class="loading text-center p-6">
+    <i class="fa fa-cog fa-spin fa-4x"></i>
+  </div>
+{{/unless}}
 
 {% raw %}
 <script id="contribution-template" type="text/x-handlebars-template">
