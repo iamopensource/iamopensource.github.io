@@ -1,4 +1,4 @@
-title: Probot
+title: I am open source
 description:
 permalink: pretty
 
@@ -17,18 +17,4 @@ sass:
   load_paths:
     - node_modules
     - node_modules/**/*/node_modules
-
-collections:
-  plugins:
-    output: true
-    permalink: /apps/:name/
-
-defaults:
-  - scope:
-      path: ""
-      type: plugins
-    values:
-      layout: plugin
-
-plugins:
-  - jekyll-octicons
+    
