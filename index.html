@@ -31,7 +31,7 @@ layout: default
   {{#each contributors }}
   <div class="contribution">
     <a href="{{user.html_url}}"><img alt="@{{user.login}}" class="gravatar rounded" height="100" src="{{user.html_url}}.png" width="100"></a>
-    <p class="text-gray contribution-message"><a class="text-gray-dark" href="{{user.html_url}}">@{{user.login}}</a> contributed to <a class="text-gray-dark" href="{{html_url}}">probot/probot</a> for the first time!</p>
+    <p class="text-gray contribution-message"><a class="text-gray-dark" href="{{user.html_url}}">@{{user.login}}</a> contributed to <a class="text-gray-dark" href="{{html_url}}">{{repo_name}}</a> for the first time!</p>
   </div>
   {{/each}}
 </script>
@@ -50,6 +50,9 @@ layout: default
     if (xhr.readyState === 4) { // Request is done
       if (xhr.status === 200) {
         var parsed = JSON.parse(xhr.response);
+        for(var i = 0; i < parsed.length; i++) {
+          parsed[i]['repo_name'] = parsed[i]['repository_url'].replace('https://api.github.com/repos/', '');
+        }
         var html = template({contributors: parsed});
         contributionsDiv.innerHTML = html;
       } else {
