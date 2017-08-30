@@ -14,7 +14,7 @@ github.authenticate({
 
 app.get('/api/contributions', async (req, res) => {
   let resp = await github.search.issues({
-    q: 'commenter:app/welcome',
+    q: 'commenter:app/welcome is:pr is:merged',
     incomplete_results: true,
     per_page: 100,
   });
