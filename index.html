@@ -15,23 +15,21 @@ layout: default
   </div>
 </div>
 
-<!-- <div class="">
+<div class="">
   <div class="container-lg px-3 py-6">
     <div class="flex-column col-12">
-      <h4 class="alt-h3 text-gray timeline-date-header">8/28</h4>
       <div class="contributions" id="contributions">
+        <div class="loading text-center p-6">
+          <i class="fa fa-cog fa-spin fa-4x"></i>
+        </div>
+      </div>
     </div>
   </div>
-</div> -->
-{{#unless html}}
-  <div class="loading text-center p-6">
-    <i class="fa fa-cog fa-spin fa-4x"></i>
-  </div>
-{{/unless}}
+</div>
 
 {% raw %}
 <script id="contribution-template" type="text/x-handlebars-template">
-  {{#each contributors }}
+  {{#each contributors}}
   <div class="contribution">
     <a href="{{user.html_url}}"><img alt="@{{user.login}}" class="gravatar rounded" height="100" src="{{user.html_url}}.png" width="100"></a>
     <p class="text-gray contribution-message"><a class="text-gray-dark" href="{{user.html_url}}">@{{user.login}}</a> contributed to <a class="text-gray-dark" href="{{html_url}}">probot/probot</a> for the first time!</p>
