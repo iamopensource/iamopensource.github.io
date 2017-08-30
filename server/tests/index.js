@@ -11,7 +11,18 @@ describe('index.js', () => {
       issuesSpy = expect.spyOn(index.github.search, 'issues').andReturn(
         {
           data: {
-            items: []
+            items: [
+              {
+                user: {
+                  login: 'anglinb'
+                }
+              },
+              {
+                user: {
+                  login: 'anglinb'
+                }
+              }
+            ]
           }
         }
       );
@@ -37,6 +48,18 @@ describe('index.js', () => {
         per_page: 100,
       });
       expect(resp.headers['access-control-allow-origin']).toBe('*');
+    });
+
+    it('should filter out multiple instances of the same user', async () => {
+      let resp = await request(index.app)
+        .get('/api/contributions')
+        .expect(200);
+      expect(issuesSpy).toHaveBeenCalledWith({
+        q: 'commenter:app/welcome is:pr is:merged',
+        incomplete_results: true,
+        per_page: 100,
+      });
+      expect(resp.body.length).toBe(1);
     });
   });
 });
