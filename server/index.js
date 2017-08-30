@@ -22,5 +22,9 @@ app.get('/api/contributions', async (req, res) => {
   res.json(resp.data.items);
 });
 
-app.listen(process.env.PORT || 3000);
-console.log(`Listening on http://127.0.0.1:${process.env.PORT || 3000}`);
+if (!module.parent) {
+  app.listen(process.env.PORT || 3000);
+  console.log(`Listening on http://127.0.0.1:${process.env.PORT || 3000}`);
+}
+module.exports = { app, github }; // For testing
+

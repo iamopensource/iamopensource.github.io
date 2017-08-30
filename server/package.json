@@ -5,12 +5,17 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "GITHUB_TOKEN=abcdef mocha tests"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "express": "^4.15.4",
     "github": "^10.0.0"
+  },
+  "devDependencies": {
+    "expect": "^1.20.2",
+    "mocha": "^3.5.0",
+    "supertest": "^3.0.0"
   }
 }
