@@ -9,7 +9,6 @@ fi
 
 echo "Beginning now deployment..."
 NOW_URL=$(now -e GITHUB_TOKEN=$GITHUB_TOKEN deploy --public)
-#NOW_URL="https://iamopensource-jepvtlbhns.now.sh"
 echo "Deployment processing at --> $NOW_URL"
 
 echo "Beginning smoke test..."
