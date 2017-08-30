@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+
+<div class="">
+  <div class="container-lg px-3 py-6">
+    <div class="flex-column col-12 post">
+      <h1 class="alt-h1 lh-condensed-ultra pb-2">{{page.title}}</h1>
+        <hr>
+        <p class="alt-text-small text-gray-light">Written by <a class="text-gray-light" href="https://github.com/{{page.post_github_username}}">@{{page.post_github_username}}</a> on {{ page.date | date_to_string }}</p>
+        <p class="text-gray pt-2">{{page.content}}</p>
+    </div>
+  </div>
+</div>
