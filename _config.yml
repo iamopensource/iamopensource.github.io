@@ -1,0 +1,20 @@
+title: I am open source
+description:
+permalink: pretty
+
+exclude:
+  - Gemfile*
+  - node_modules
+  - package.json
+  - package-lock.json
+  - README.md
+  - node_modules
+  - vendor
+
+sass:
+  style: :compressed
+  sass_dir: _sass
+  load_paths:
+    - node_modules
+    - node_modules/**/*/node_modules
+    
