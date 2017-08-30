@@ -6,4 +6,3 @@ Gemfile.lock
 vendor
 .bundle
 Gemfile.lock
-node_modules
