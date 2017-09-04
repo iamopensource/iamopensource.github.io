@@ -45,5 +45,10 @@ script/server
 
 ### Contributions
 
-We welcome contributions! Feel free to open an [issue](https://github.com/iamopensource/iamopensource.github.io/issues/new) or [pull request](https://github.com/iamopensource/iamopensource.github.io/compare) to suggest a change you would like to see. 
+We welcome contributions! Feel free to open an [issue](https://github.com/iamopensource/iamopensource.github.io/issues/new) or [pull request](https://github.com/iamopensource/iamopensource.github.io/compare) to suggest a change you would like to see. Additionally, we are specifically looking for contributors in these areas 👇
 
+- [Call for stories](https://github.com/iamopensource/iamopensource.github.io/issues/16) -- Do you have an open source journey that would help inspire others? We would love to hear about!
+- [Call for designers](https://github.com/iamopensource/iamopensource.github.io/issues/15) -- We want the site to look beautiful and we want the stories content to shine through.
+- [Call for photographers](https://github.com/iamopensource/iamopensource.github.io/issues/17) -- Part of showcasing individuals in stories is having a beautiful image to accompany their post.
+- [Call for maintainers](https://github.com/iamopensource/iamopensource.github.io/issues/18) -- Does this project line up with your experience? Is there anything we can give new comers to make their first contribution experience better?
+- [Call for opinions](https://github.com/iamopensource/iamopensource.github.io/issues/19) -- Are we going about this correctly? Have we overlooked any opinions? What can make this project better?
