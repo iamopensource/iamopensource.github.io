@@ -94,3 +94,24 @@ code {
 .contribution-message {
   padding-left: 20px;
 }
+
+.post {
+  p {
+     color: $text-gray !important;
+  }
+}
+
+.stories {
+  display: flex;
+  flex-direction: column;
+}
+
+.story {
+  display: flex;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.story-detail {
+  padding-left: 20px;
+}

@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<div class="">
+  <div class="container-lg px-3 py-6">
+    <div class="flex-column col-12">
+      <div class="stories">
+        {% for post in site.posts %}
+          <div class="story">
+            <a href="https://github.com/{{post.post_github_username}}"><img alt="@{{post.post_github_username}}" class="gravatar rounded" height="100" src="https://github.com/{{post.post_github_username}}.png" width="100"></a>
+            <div class="story-detail">
+              <a class="text-gray-dark" href="{{post.url}}">
+                <h3 class="alt-h2 lh-condensed-ultra pb-">{{post.title}}</h3>
+              </a>
+              <hr>
+              <p class="alt-text-small text-gray-light">Written by <a class="text-gray-light" href="https://github.com/{{post.post_github_username}}">@{{post.post_github_username}}</a> on {{ post.date | date_to_string }}</p>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
